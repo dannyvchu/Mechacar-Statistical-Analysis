@@ -31,25 +31,40 @@ The design specifications of the MechaCar dictate that the variance of the suspe
 
 ### T-Tests on Suspension Coils
 
-Looking at the heat map on the top right, we can see that the majority of rentals are done by subscribers, compared to one time users. New startups should definitely consider a subscription plan for local renters who may use bikes as a way to commute to and from work.
+![ttest_all](images/ttest_all.png)
 
+Looking at the t-test results for all of the lots together, we can see that the mean is not statistically different than the population mean of 1500. The p-value of 0.06028 is above the confidence level of 0.05. Therefore we do not have sufficient evidence to reject the null hypothesis.
 
-## Summary
+![ttest_all](images/ttest_lot1.png)
 
-There are many trends and insights that can be deduced looking at the visualizations above that would be extremely useful for any bike rental company.
+The results for Lot 1 is not statistically different to the population mean. The p-value for Lot 1 is 1, which does not give us sufficient evidence to reject the null hypothesis. 
 
-### Trends
-- Most bikes are rented for under 30 minutes.
-- Males are the majority of users for bike rentals.
-- Bikes are rented most commonly at the start and end of work hours.
-- Subscribers rent more often than one-time-users.
+![ttest_all](images/ttest_lot2.png)
 
-### Insights
-- The target demographic for any ad campaigns should target males at first, and then switch to females when the male market is saturated.
-- Bike maintenance should be performed during the slowest times of the day in the very early AMs.
-- Creating a subscription service will help incentivize local commuters to joining.
+The results for Lot 2 is not statistically different to the population mean. The p-value for Lot 2 is 0.6072, which does not give us sufficient evidence to reject the null hypothesis. 
 
-### Further Analysis
-For more information, I would like to create a heatmap over a map of the area, to help understand which types of neighborhoods have the most rentals. This would give us an insight on how to distribute the total supply of bikes to each given neighborhood. Another visualization I would like to make in the future is a map of each bike and the location of the end points vs start points to gain an insight of how to redistribute bikes from areas of low rental traffic to high rental traffic.
+![ttest_all](images/ttest_lot3.png)
 
-## Link to my Tableau Public page: [CitiBike Data Analysis Dashboard](https://public.tableau.com/views/CitiBikeDataAnalysis_16268649968870/CitiBikeDataAnalysis?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
+The results for Lot 3 imply a slight statistical difference to the population mean.
+The p-value for Lot 3 is 0.04168, which is below our confidence level of 0.05. Therefore we do have a sufficient evidence to reject the null hypothesis. However, the results are extremely close, and further inspection of Lot 3 may be needed.
+
+## Study Design: MechaCar vs Competition
+
+Because of recent trends of green energy, electric vehicles, and a push for greater environmental protection and awareness, consumers nowadays greatly value overall fuel efficiency
+
+### Metric to be tested
+
+The fuel efficiency (highway and city) of MechaCar can be calculated in terms of miles per gallon of fuel, and compared to competitors' vehicles.
+
+### Hypothesis
+
+<b>H<sub>0</sub></b>: The fuel efficiency of the MechaCar in MPG is the same as competitors.
+
+<b>H<sub>a</sub></b>: The fuel efficiency of the MechaCar in MPG is statistically different compared to competitors.
+
+### Statistics
+
+The best statistical test to use to test these hypothesis is the two sample t test, which is best used to see if there is a statistical difference between two different groups.
+
+### Data
+The data necessary for this analysis will be the fuel efficiency of the MechaCar in MPG and the same for all competitors' vehicles as well.

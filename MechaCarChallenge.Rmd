@@ -50,7 +50,10 @@ output: Use t-tests to determine if different lots are statistically different
 
 ```{r}
 
-
-
+# T Test for all lots
+t.test(coil_data$PSI, mu=1500)
+# T Test for each lots
+t.test(subset(coil_data, Manufacturing_Lot == 'Lot1')$PSI, mu=1500)
+t.test(subset(coil_data, Manufacturing_Lot == 'Lot2')$PSI, mu=1500)
+t.test(subset(coil_data, Manufacturing_Lot == 'Lot3')$PSI, mu=1500)
 ```
-
