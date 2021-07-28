@@ -1,35 +1,35 @@
 # MechaCar Statistical Analysis
 
 ## Project Purpose
-Analyze the data taken from New York City's CitiBike usage from the month of August 2019 to understand the rider patterns, and to gather insights that can be useful for new bike rental startups. Tableau will be used to create easy-to-understand visualizations.
+The company AutosRUs wants to improve their decision making process on improving their MechaCar by implementing data driven analysis and statistics. Using old data provided by the company, we will perform retrospective analysis, analytical verification and validation of current automotive specifications, and study design of future product testing.
 
 ## Resources
 - Software: 
-	- Tableau
-	- Python 3.8.5
-	- Pandas
+	- R
+	- RStudio
+	- tidyverse
+	- ggplot2
 	
 ## Results
 
-### Trip Duration
+### Linear Regression to Predict MPG
 
-One important factor that go into how many bikes will be needed for a given population is the total trip duration of each bike. 
+![lin_reg](images/lin_reg.png)
 
-![checkout_times](images/checkout_times.png)
+- Both the Vehicle Length (p-value = 2.60x10^-12) and Ground Clearance (p-value = 5.21x10^-08) variables have the most significant impact on the MPG of MechaCar. The intercept (-104.0) is also significant, implying other important variables that impact MPG not included in the given dataset.
+- The slope of the linear model is not considered to be zero because the coefficients of the significant variables are non-negligible. Assuming a confidence level of α=0.05, we can see that the calculated p-value of 5.35x10^-11 is much lower than α, therefore their is an extremely high probability that the relationships between our variables and the MPG is not just random chance.
+- This linear model predicts the miles per gallon of mechacar fairly effectively. Our r-squared value of 0.7149 implies a 71.5% accurate representation of the data.
 
-As we can see here, the vast majority of users will rent bikes for no more than 30 minutes, with almost negligible amount renting the bikes for more than an hour. We can see that this trend is followed regardless of gender. Another trend that we can see regarding gender, is that male riders seem to be the overwhelming majority of the total users, which may be important for creating ad campaigns for a male dominated target audience.
+### Summary Statistics on Suspension Coils
 
-### Bike Repair and Maintenance
+![tot_sum](images/tot_sum.png)
+![lot_sum](images/lot_sum.png)
 
-In operating a bike rental business, one of the largest business expenses would be repairing and maintaining all of the bikes. Bikes that accumulate a lot mileage can be seen below, which larger, darker circles indicating which bikes need to checked more often during a routine maintenance.
+The design specifications of the MechaCar dictate that the variance of the suspension coils can not exceed 100 lbs/in^2 . The variance for the combined lots is below the specified threshold sitting at 62.29, therefore meeting the design specifications. However, the variance for Lot 3 is 170.29, which far exceeds the appropriate design.
 
-![bike_utilization](images/bike_utilization.png)
 
-A very important factor to consider is when bikes are rented most commonly throughout the day, which will help new bike rental startups decide when the optimal time to perform bike maintenance will be. Looking at the heat maps below, we can clearly see that bikes are most often rented during common work hours on the weekdays (~7AM - ~7PM) with the highest rates of rentals occurring at the start and end of the work hours. According to the data, bike maintenance would be easiest to be done during the slowest business times, from midnight to 4AM. 
 
-![trips_by_weekdays](images/trips_by_weekdays.png)
-
-### Subscribers vs One-time-users
+### T-Tests on Suspension Coils
 
 Looking at the heat map on the top right, we can see that the majority of rentals are done by subscribers, compared to one time users. New startups should definitely consider a subscription plan for local renters who may use bikes as a way to commute to and from work.
 
